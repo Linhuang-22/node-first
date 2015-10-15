@@ -45,8 +45,8 @@ app.use('/', express.static(__dirname + '/www'));  //指定静态HTML文件的�
  	});
 
  	// 接收某客户传来的信息，并且向其他客户都发送改信息
- 	socket.on('postMsg', function(msg) {
- 		socket.broadcast.emit('newMsg', socket.nickname, msg);
+ 	socket.on('postMsg', function(msg, color) {
+ 		socket.broadcast.emit('newMsg', socket.nickname, msg, color);
  		/* Act on the event */
  	});
 
