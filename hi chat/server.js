@@ -22,13 +22,17 @@ app.use('/', express.static(__dirname + '/www'));  //指定静态HTML文件的�
  	// 	// 将接收到的消息输出到控制台
  	// 	console.log(data);
  	// })
+ 	var i = 1;
+ 	console.log(++i + "\n");
 
 
 
  	socket.on("login", function(nickname) {
  		if(users.indexOf(nickname) > -1) {
  			socket.emit("nickExisted");
+ 			console.log(nickname + "quit.\n");
  		} else {
+ 			console.log(nickname + "login.\n");
  			socket.userIndex = users.length;
  			socket.nickname = nickname;
  			users.push(nickname);
